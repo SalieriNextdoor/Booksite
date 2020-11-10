@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom';
 import NavbarHome from '../layout/NavbarHome';
 
 const Home = () => {
-
     return(
         <div id="home">
             <NavbarHome />

@@ -255,6 +255,37 @@ body {
   font-size: 0.65rem;
 }
 
+.error-msg {
+  display: flex;
+  position: absolute;
+  background-color: rgb(219, 58, 58);
+  padding: 1rem;
+  width: 20%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -20%;
+  text-align: left;
+  color: #fff;
+  border-radius: 10px;
+  transition: top 1s ease-in-out;
+  z-index: 2;
+}
+
+.float-in {
+  top: 7%;
+}
+
+.error-msg .fa-times {
+  position: absolute;
+  right: 5%;
+  top: 40%;
+}
+
+.error-msg .fa-times:hover {
+  cursor: pointer;
+}
+
 .login-link {
   text-decoration: none;
   color: #5712c7;
