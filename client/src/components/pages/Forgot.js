@@ -1,4 +1,4 @@
-import {React, Fragment} from 'react';
+import React, {Fragment} from 'react';
 import NavbarHome from '../layout/NavbarHome';
 
 const Forgot = () => {
