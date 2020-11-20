@@ -8,9 +8,11 @@ const Signup = props => {
 
     const authContext = useContext(AuthContext);
 
-    const {register, isAuthenticated, error} = authContext;
+    const {register, isAuthenticated, error, loadUser} = authContext;
 
     useEffect (() => {
+        loadUser();
+
         if (isAuthenticated) {
             props.history.push('/dashboard');
         }

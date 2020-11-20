@@ -12,6 +12,7 @@ app.use(express.json({extended: false}));
 
 // Defining Routes
 app.use('/api/auth', require('./routes/auth'));
+app.use('/api/book', require('./routes/book'));
 
 // Serve static assets in production
 if (process.env.NODE_ENV === 'production') {

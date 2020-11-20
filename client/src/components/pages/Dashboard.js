@@ -42,8 +42,8 @@ const Dashboard = () => {
                                 <p>5 minutos atrás</p>
                             </div>
                             <div className="activity-actions">
-                                <button><i class="fas fa-comments"></i></button>
-                                <button><i class="fas fa-heart"></i></button>
+                                <button><i className="fas fa-comments"></i></button>
+                                <button><i className="fas fa-heart"></i></button>
                             </div>
                         </div>
                             <div className="activity">
@@ -53,8 +53,8 @@ const Dashboard = () => {
                                     <p>1 hora atrás</p>
                                 </div>
                                 <div className="activity-actions">
-                                    <button><p>1</p><i class="fas fa-comments"></i></button>
-                                    <button><p>1</p><i class="fas fa-heart"></i></button>
+                                    <button><p>1</p><i className="fas fa-comments"></i></button>
+                                    <button><p>1</p><i className="fas fa-heart"></i></button>
                                 </div>
                             </div>
                         </div>

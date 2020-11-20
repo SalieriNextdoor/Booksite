@@ -1,24 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest">
-    <link rel="mask-icon" href="%PUBLIC_URL%/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://kit.fontawesome.com/b3a7080091.js" crossorigin="anonymous"></script>
-    <title>Booksite</title>
-  </head>
-  <body>
-    <div id="root"></div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script>
     window.onload = () => {
         $("#1-star").click(() => $("#1-star").attr("clicked", "yes"))
         $("#2-star").click(() => $("#2-star").attr("clicked", "yes"))
@@ -167,6 +146,3 @@
           $("#5-star").removeClass()
           $("#5-star").addClass("far fa-star")}})
       } 
-    </script>
-  </body>
-</html>

@@ -5,3 +5,6 @@ export const LOGIN_FAIL = "LOGIN_FAIL";
 export const LOGOUT = "LOGOUT";
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_FAIL = "REGISTER_FAIL";
+
+export const BOOK_LOADED = "BOOK_LOADED";
+export const BOOK_LOAD_ERROR = "BOOK_LOAD_ERROR";

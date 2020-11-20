@@ -48,8 +48,8 @@ class NavbarHome extends React.Component {
                         <Link to="/" className="options-element">Pesquisar</Link>
                     </div>
                     <div className="navbar-other-options">
-                        <button className=""><i class="fas fa-bell"></i></button>
-                        <Link to="/" className=""><i class="fas fa-cog"></i></Link>
+                        <button className=""><i className="fas fa-bell"></i></button>
+                        <Link to="/" className=""><i className="fas fa-cog"></i></Link>
                     </div>
                 </div>
                 <button onClick={this.hamburgerToggle} id="hamburger-menu" className="hamburger-menu">

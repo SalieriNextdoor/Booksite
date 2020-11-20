@@ -577,12 +577,168 @@ body {
 .book-text p {
   color: rgb(229, 226, 226);
   font-weight: 100;
+  font-size: 0.9rem;
   margin: 1.2rem 0;
 }
 
 .book-reviews {
   display: flex;
+  position: relative;
   flex-direction: column;
+  margin-top: 3rem;
+}
+
+.book-reviews h3 {
+  color: #6914f3;
+  font-weight: 100;
+}
+
+.book-reviews > a {
+  color: #9c62fb;
+  text-decoration: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.book-reviews .book-review:nth-child(3) {
+  margin-top: 10px;
+}
+
+.book-review {
+  margin-top: 1rem;
+}
+
+.top-text {
+  position: relative;
+  background-color: #0e031f;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.top-text a {
+  color: #9c62fb;
+  text-decoration: none;
+}
+
+.top-text p:nth-child(2) {
+  color: rgb(201, 198, 198);
+  font-size: 0.8rem;
+}
+
+.top-text p:nth-child(3) {
+  color: rgb(201, 198, 198);
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.top-text p:nth-child(4) {
+  color: #9c62fb;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.top-text p:nth-child(5) {
+  margin-top: 2rem;
+  color: rgb(216, 211, 211);
+  font-size: 0.9rem;
+}
+
+/* Review Write Page */
+.review {
+  margin-top: 3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-body {
+  text-align: center;
+  background-color: #0e031f;
+  padding: 1rem 5rem;
+  border-radius: 10px;
+}
+
+.review-body h2 {
+  color: #6914f3;
+  font-weight: 100;
+}
+
+.star-input {
+  display: inline-flex;
+  white-space: nowrap;
+  margin: 0 auto;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.star-input h5 {
+  color: rgb(211, 211, 211);
+  font-weight: 100;
+  font-size: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.star-input i {
+  font-size: 1.75rem;
+  margin-top: 2rem;
+}
+
+.review-body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-writing {
+  margin-top: 2.5rem;
+}
+
+.review-writing textarea {
+  margin-top: 10px;
+  background: #0b0218 !important;
+  color: #fff;
+  font-size: 0.95rem;
+  width: 40rem;
+  height: 25rem;
+}
+
+.review-writing h5 {
+  color: rgb(211, 211, 211);
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+.review-body .btn-submit {
+  width: 25%;
+  background-color: #5712c7;
+  border-color: #5712c7;
+  font-size: 1.2rem;
+  margin: 0.9rem auto;
+}
+
+/* Not Found */
+.not-found {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 2.5rem;
+  color: #9c62fb;
+}
+
+.not-found a {
+  color: #9c62fb;
+  text-decoration: none;
+}
+
+.not-found i {
+  font-size: 8rem;
+  margin-top: 5rem;
 }
 
 /* Media Query */
@@ -710,6 +866,10 @@ body {
   text-align: center;
   color: #fff;
   user-select: none;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
 
 .form-input {

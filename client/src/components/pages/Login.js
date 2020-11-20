@@ -8,9 +8,11 @@ const Login = props => {
 
     const authContext = useContext(AuthContext);
 
-    const {login, isAuthenticated, error} = authContext;
+    const {login, isAuthenticated, error, loadUser} = authContext;
 
     useEffect (() => {
+        loadUser();
+
         if (isAuthenticated) {
             props.history.push('/dashboard');
         }
