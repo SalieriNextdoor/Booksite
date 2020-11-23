@@ -1,6 +1,8 @@
 import {
     BOOK_LOADED,
-    BOOK_LOAD_ERROR
+    BOOK_LOAD_ERROR,
+    REVIEW_POSTED,
+    REVIEW_POST_ERROR
 } from '../types';
 
 const bookReducer = (state, action) => {
@@ -11,6 +13,12 @@ const bookReducer = (state, action) => {
                 loading: false,
                 book_info: action.payload
             }
+        case REVIEW_POSTED:
+            return {
+                ...state,
+                loading: false
+            }
+        case REVIEW_POST_ERROR:
         case BOOK_LOAD_ERROR:
             return {
                 ...state,

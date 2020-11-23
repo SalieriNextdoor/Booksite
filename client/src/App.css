@@ -619,32 +619,35 @@ body {
 .top-text a {
   color: #9c62fb;
   text-decoration: none;
+  font-size: 1.15rem;
 }
 
 .top-text p:nth-child(2) {
   color: rgb(201, 198, 198);
-  font-size: 0.8rem;
-}
-
-.top-text p:nth-child(3) {
-  color: rgb(201, 198, 198);
   position: absolute;
+  font-size: 0.9rem;
   right: 0;
   top: 0;
   margin-right: 1rem;
   margin-top: 1rem;
 }
 
-.top-text p:nth-child(4) {
-  color: #9c62fb;
+.top-text p:nth-child(3) {
+  color: rgb(216, 211, 211);
   margin: 0.5rem 0;
   font-size: 0.9rem;
 }
 
-.top-text p:nth-child(5) {
-  margin-top: 2rem;
+.top-text p:nth-child(4) {
+  margin-top: 1rem;
   color: rgb(216, 211, 211);
   font-size: 0.9rem;
+}
+
+.no-review {
+  color: #5b00ec;
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
 /* Review Write Page */
@@ -739,6 +742,25 @@ body {
 .not-found i {
   font-size: 8rem;
   margin-top: 5rem;
+}
+
+/* Review Publish Success */
+.review-success {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.review-success h3 {
+  font-weight: 100;
+  font-size: 2rem;
+  color: #6914f3;
+}
+
+.review-success a {
+  text-decoration: none;
+  border-bottom: 1.6px solid #9c62fb;
+  color: #9c62fb;
+  font-size: 1.1rem;
 }
 
 /* Media Query */

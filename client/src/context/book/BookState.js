@@ -2,9 +2,12 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import BookContext from './bookContext';
 import bookReducer from './bookReducer';
+import setAuthToken from '../../utils/setAuthToken';
 import {
     BOOK_LOADED,
-    BOOK_LOAD_ERROR
+    BOOK_LOAD_ERROR,
+    REVIEW_POSTED,
+    REVIEW_POST_ERROR
 } from '../types';
 
 const BookState = props => {
@@ -18,17 +21,32 @@ const BookState = props => {
 
     // Load Book
     const loadBook = async book_id => {
+        try {
+            const res = await axios.get(`/api/book/${book_id}`);
+            dispatch({type: BOOK_LOADED, payload: res.data})
+        } catch (err) {
+            console.log(err);
+            dispatch({type: BOOK_LOAD_ERROR, payload: err.response.data})
+        }
+    }
+
+    // Post Review
+    const postReview = async (reviewData, book_id) => {
+        if (localStorage.token) {
+            setAuthToken(localStorage.token);
+        }
+
         const config = {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }
+        };
 
         try {
-            const res = await axios.get(`/api/book/${book_id}`, config);
-            dispatch({type: BOOK_LOADED, payload: res.data})
+            const res = await axios.post(`/api/book/review/${book_id}`, reviewData, config);
+            dispatch({type: REVIEW_POSTED, payload: res.data});
         } catch (err) {
-            dispatch({type: BOOK_LOAD_ERROR, payload: err.response.data})
+            dispatch({type: REVIEW_POST_ERROR, payload: err.response.data})
         }
     }
 
@@ -38,7 +56,8 @@ const BookState = props => {
             book_info: state.book_info,
             loading: state.loading,
             error: state.error,
-            loadBook
+            loadBook,
+            postReview
         }}
         >
             {props.children}

@@ -10,6 +10,7 @@ import Forgot from './components/pages/Forgot';
 import Dashboard from './components/pages/Dashboard';
 import BookPage from './components/pages/BookPage';
 import WriteReview from './components/pages/WriteReview';
+import ReviewSuccess from './components/pages/ReviewSuccess';
 import NotFound from './components/pages/NotFound';
 
 import AuthState from './context/auth/AuthState';
@@ -27,7 +28,8 @@ function App() {
               <Route component={Dashboard}  exact path="/dashboard"/> 
               {/* Set to private after ^ */}
               <Route component={BookPage} path="/bookpage/:book_id"/>
-              <Route component={WriteReview}  exact path="/writereview"/>
+              <Route component={WriteReview}  exact path="/writereview/:book_id"/>
+              <Route component={ReviewSuccess}  exact path="/reviewsuccess/:book_id"/>
               <Route component={Home} exact path="/" />
               <Route component={NotFound} />
             </Switch>
