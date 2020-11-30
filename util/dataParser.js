@@ -51,10 +51,16 @@ const dataParser = data => {
             synopsis = synopsis.substring(0, 499) + "(...)"
         }
         let book_ISBN;
+        let img;
         if (interData.GoodreadsResponse.book.isbn._cdata) {
             book_ISBN = interData.GoodreadsResponse.book.isbn._cdata
         } else {
             book_ISBN = interData.GoodreadsResponse.book.isbn._text
+        }
+        if (!book_ISBN) {
+            img = interData.GoodreadsResponse.book.image_url._text.replace('._SX98_', '')
+        } else {
+            img = `https://covers.openlibrary.org/b/ISBN/${book_ISBN}.jpg`
         }
         const book_info = {
             title,
@@ -62,7 +68,7 @@ const dataParser = data => {
             synopsis,
             img: null
         }
-        return [book_info, book_ISBN]
+        return [book_info, img]
 }
 
 module.exports = dataParser;

@@ -528,20 +528,41 @@ body {
 
 .bookpage-grid .bookpage-grid-item:nth-child(1) {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .book-img {
   position: absolute;
   right: 0;
+}
+
+.book-img img {
+  width: 230px;
+  height: 310px;
   padding: 1rem;
   border: 2px solid #0e031f;
   border-radius: 10px;
   background-color: #0e031f;
 }
 
-.book-img img {
-  width: 200px;
-  height: 280px;
+.star-score {
+  margin-top: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid #0e031f;
+  border-radius: 10px;
+  background-color: #0e031f;
+}
+
+.star-score .star-input {
+  margin: 0;
+}
+
+.star-score .star-input button {
+  border: none;
+  background-color: transparent;
+  user-select: none;
 }
 
 .book-text {
@@ -566,6 +587,10 @@ body {
 
 .book-text i {
   margin-top: 0.7rem;
+}
+
+.score-info {
+  margin-left: 3px;
 }
 
 .book-text span {
@@ -672,26 +697,20 @@ body {
 }
 
 .star-input {
-  display: inline-flex;
-  white-space: nowrap;
-  margin: 0 auto;
+  text-align: center;
   margin-top: 1rem;
-  position: relative;
 }
 
 .star-input h5 {
   color: rgb(211, 211, 211);
   font-weight: 100;
   font-size: 1rem;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  margin-bottom: 0.8rem;
 }
 
 .star-input i {
   font-size: 1.75rem;
-  margin-top: 2rem;
+  z-index: 100;
 }
 
 .review-body form {
@@ -761,6 +780,62 @@ body {
   border-bottom: 1.6px solid #9c62fb;
   color: #9c62fb;
   font-size: 1.1rem;
+}
+
+/* Search */
+
+.book-search {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.search-input {
+  position: relative;
+  background-color: #110029;
+  margin: 0 auto;
+  width: 70%;
+}
+
+.book-search .form-input {
+  width: 95%;
+  background-color: #110029;
+  color: rgb(211, 211, 211);
+}
+
+.book-search i {
+  color: rgba(211, 211, 211, 0.8);
+  position: absolute;
+  left: 1%;
+  top: 33%;
+}
+
+.book-items {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 2rem;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.book-item {
+  margin: 2rem 0;
+  background-color: #110029;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.book-item img {
+  width: 150px;
+  height: 200px;
+}
+
+.book-item p {
+  color: #9c62fb;
+  font-size: 0.8rem;
+}
+
+.book-item a {
+  text-decoration: none;
 }
 
 /* Media Query */

@@ -7,12 +7,8 @@ const BookSchema = mongoose.Schema({
         unique: true
     },
     book_score: {
-        type: Number,
-        default: 0
-    },
-    book_score_votes: {
-        type: Number,
-        default: 0
+        type: Object,
+        default: {}
     },
     book_reviews: {
         type: Array,
