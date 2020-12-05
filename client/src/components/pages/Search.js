@@ -21,13 +21,13 @@ const Search = () => {
 
     const onChange = e => searchBooks({field: e.target.value});
 
-    const onClick = e => setTempInfo({title: e.target.title, img: e.target.src});
+    const onClick = (title, img) => setTempInfo({title, img});
 
     return (
         <Fragment>
             {isAuthenticated ? (<NavbarDashboard />) : (<NavbarHome />)}
             <div className="book-search">
-                <form>
+                <form onSubmit={e => e.preventDefault()}>
                     <div className="search-input">
                         <input autoComplete="off" onChange={onChange} className="form-input" type="text" name="search" />
                         <i className="fas fa-search"></i>
@@ -40,9 +40,9 @@ const Search = () => {
                             <Fragment>
                                 {book_info.map((book, idx) => {
                                     return(
-                                        <div key={`${idx}`} className="book-item">
-                                            <Link onClick={onClick} to={`/bookpage/${book.id}`}><img title={book.title} src={book.img} alt=""/></Link>
-                                            <p>{book.title}</p>
+                                        <div onClick={onClick.bind(null, book.title, book.img)} key={idx} className="book-item">
+                                            <Link to={`/bookpage/${book.id}`}><img src={book.img} alt=""/></Link>
+                                            <Link to={`/bookpage/${book.id}`}><p>{book.title}</p></Link>
                                         </div>
                                     )
                                 })}

@@ -838,6 +838,61 @@ body {
   text-decoration: none;
 }
 
+/* User Book List */
+.book-list {
+  width: 60%;
+  margin: 5rem auto;
+  padding: 0.8rem;
+  background-color: #110029;
+  border-radius: 10px;
+}
+
+.book-listed {
+  margin-bottom: 1rem;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: solid 2.5px #0b0218;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.book-list .book-listed:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: none;
+}
+
+.book-listed-img {
+  width: 40px;
+  height: 50px;
+}
+
+.book-listed-name {
+  margin-left: 2rem;
+  text-decoration: none;
+  color: #9c62fb;
+  font-size: 0.9rem;
+}
+
+.book-listed-score {
+  position: absolute;
+  right: 20%;
+  color: rgb(211, 211, 211);
+  margin-right: 5rem;
+}
+
+.book-listed i {
+  position: absolute;
+  right: 3%;
+  color: #6914f3;
+}
+
+.book-listed i:hover {
+  cursor: pointer;
+}
+
 /* Media Query */
 @media (max-width: 1080px) {
   .grid-item {

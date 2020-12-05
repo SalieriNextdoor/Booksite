@@ -7,6 +7,8 @@ import {
     SCORE_UPDATE_ERROR,
     BOOKS_SEARCHED,
     BOOK_SEARCH_ERROR,
+    BOOK_ENTRY_DELETED,
+    BOOK_ENTRY_DELETE_ERROR,
     SET_TEMP_INFO
 } from '../types';
 
@@ -21,6 +23,7 @@ const bookReducer = (state, action) => {
             }
         case SCORE_UPDATED:
         case REVIEW_POSTED:
+        case BOOK_ENTRY_DELETED:
             return {
                 ...state,
                 loading: false
@@ -37,6 +40,7 @@ const bookReducer = (state, action) => {
         case REVIEW_POST_ERROR:
         case BOOK_LOAD_ERROR:
         case BOOK_SEARCH_ERROR:
+        case BOOK_ENTRY_DELETE_ERROR:
             return {
                 ...state,
                 book_info: null,

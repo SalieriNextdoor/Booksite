@@ -14,6 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const Book = require('../models/Book');
+const User = require('../models/User');
 
 // Get books
 // Public
@@ -98,16 +99,54 @@ router.post('/review/:book_id', auth, async(req, res) => {
 router.put('/:book_id', auth, async (req, res) => {
     const modelBook = new Book({ book_id: req.params.book_id});
     try {
-        if (!req.body.score) {
-            res.status(400).send("Server Error")
+        if (!req.body.score || !req.body.user_id || !req.body.book_info) {
+            return res.status(400).send("Server Error")
         }
 
         const book = await Book.findOneOrCreate({book_id: req.params.book_id}, modelBook);
-        book.book_score = {...book.book_score, [req.body.user_id]: req.body.score}
+        const user = await User.findById(req.body.user_id);
+        book.book_score = {...book.book_score, [req.body.user_id]: req.body.score};
+        const book_info = {
+            book_id: req.params.book_id,
+            title: req.body.book_info.title,
+            img: req.body.book_info.img,
+            score: req.body.score
+        }
+        user.books.push(book_info);
         await book.save();
+        await user.save();
         res.send("Updated");
     } catch (err) {
         console.error(err.message);
+        console.log(err)
+        res.status(400).send("Server Error");
+    }
+})
+
+// Delete book entry
+// Private
+router.put('/', auth, async (req, res) => {
+    try {
+        if (!req.body.book || !req.body.user_id) {
+            return res.status(400).send("Server Error")
+        }
+
+        const book = await Book.findOne({book_id: req.body.book.book_id});
+        const user = await User.findById(req.body.user_id);
+        for (i=0;i<user.books.length;i++) {
+            if (user.books[i].book_id === req.body.book.book_id) {
+                user.books.splice(i, 1);
+                break;
+            }
+        }
+        delete book.book_score[req.body.user_id];
+        book.markModified('book_score');
+        await book.save();
+        await user.save();
+        res.send("Updated");
+    } catch (err) {
+        console.error(err.message);
+        console.log(err)
         res.status(400).send("Server Error");
     }
 })

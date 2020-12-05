@@ -12,6 +12,8 @@ import {
     SCORE_UPDATE_ERROR,
     BOOKS_SEARCHED,
     BOOK_SEARCH_ERROR,
+    BOOK_ENTRY_DELETED,
+    BOOK_ENTRY_DELETE_ERROR,
     SET_TEMP_INFO
 } from '../types';
 
@@ -98,6 +100,27 @@ const BookState = props => {
         }
     }
 
+    // Delete Book Entry from List
+    const deleteBookEntry = async data => {
+        if (localStorage.token) {
+            setAuthToken(localStorage.token);
+        }
+
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        try {
+            const res = await axios.put(`/api/book/`, data, config);
+            dispatch({type: BOOK_ENTRY_DELETED, payload: res.data});
+        } catch (err) {
+            console.log(err);
+            dispatch({type: BOOK_ENTRY_DELETE_ERROR, payload: err})
+        }
+    }
+
     return (
         <BookContext.Provider
         value={{
@@ -110,6 +133,7 @@ const BookState = props => {
             searchBooks,
             postReview,
             updateScore,
+            deleteBookEntry
         }}
         >
             {props.children}

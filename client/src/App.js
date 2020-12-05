@@ -11,6 +11,7 @@ import Dashboard from './components/pages/Dashboard';
 import BookPage from './components/pages/BookPage';
 import WriteReview from './components/pages/WriteReview';
 import ReviewSuccess from './components/pages/ReviewSuccess';
+import BookList from './components/pages/BookList';
 import Search from './components/pages/Search'
 import NotFound from './components/pages/NotFound';
 
@@ -31,6 +32,7 @@ function App() {
               <Route component={BookPage} path="/bookpage/:book_id"/>
               <Route component={WriteReview} path="/writereview/:book_id"/>
               <Route component={ReviewSuccess} path="/reviewsuccess/:book_id"/>
+              <Route component={BookList} exact path="/booklist" />
               <Route component={Search}  exact path="/search" />
               <Route component={Home} exact path="/" />
               <Route component={NotFound} />

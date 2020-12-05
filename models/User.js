@@ -15,6 +15,10 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true,
     },
+    books: {
+        type: Array,
+        default: []
+    },
     date: {
         type: Date,
         default: Date.now

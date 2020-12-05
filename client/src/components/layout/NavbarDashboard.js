@@ -34,8 +34,8 @@ class NavbarHome extends React.Component {
                 <div ref={this.overlayRef} id="overlay-options" className="overlay-options hide">
                     <Link to="/dashboard">Home</Link>
                     <Link to="/">Perfil</Link>
-                    <Link to="/">Minha Lista</Link>
-                    <Link to="/">Pesquisar</Link>
+                    <Link to="/booklist">Minha Lista</Link>
+                    <Link to="/search">Pesquisar</Link>
                     <Link to="/">Notificações</Link>
                     <Link to="/">Configurações</Link>
                 </div>
@@ -44,8 +44,8 @@ class NavbarHome extends React.Component {
                     <div className="navbar-options">
                         <Link to="/dashboard" className="options-element">Home</Link>
                         <Link to="/" className="options-element">Perfil</Link>
-                        <Link to="/" className="options-element">Minha Lista</Link>
-                        <Link to="/" className="options-element">Pesquisar</Link>
+                        <Link to="/booklist" className="options-element">Minha Lista</Link>
+                        <Link to="/search" className="options-element">Pesquisar</Link>
                     </div>
                     <div className="navbar-other-options">
                         <button className=""><i className="fas fa-bell"></i></button>

@@ -63,7 +63,7 @@ const BookPage = props => {
 
     const onSubmit = e => {
         e.preventDefault();
-        updateScore({score, user_id: user._id}, params.book_id);
+        updateScore({score, user_id: user._id, book_info}, params.book_id);
     }
 
     return (
@@ -83,7 +83,7 @@ const BookPage = props => {
                             <div id="star-input" className="star-input">
                                 <h5>Score</h5>
                                 <div id="stars">
-                                {book_info.book_score[user._id] ? (
+                                {(book_info.book_score[user._id] && book_info.synopsis) ? (
                                     <Fragment>
                                         {[...Array(Math.floor(book_info.book_score[user._id])).keys()].map((_, idxa) => {
                                         return (
